@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/bg">
+        <file>Wiki-background</file>
+        <file>_____/新增資料夾/blue.png</file>
+        <file>_____/新增資料夾/blue_bomb.png</file>
+        <file>_____/新增資料夾/blue_bomb_clicked.png</file>
+        <file>_____/新增資料夾/blue_clicked.png</file>
+        <file>_____/新增資料夾/blue_horizontal_bomb.png</file>
+        <file>_____/新增資料夾/blue_horizontal_bomb_clicked.png</file>
+        <file>_____/新增資料夾/blue_vertical_bomb.png</file>
+        <file>_____/新增資料夾/blue_vertical_bomb_clicked.png</file>
+        <file>_____/新增資料夾/green.png</file>
+        <file>_____/新增資料夾/green_bomb.png</file>
+        <file>_____/新增資料夾/green_bomb_clicked.png</file>
+        <file>_____/新增資料夾/green_clicked.png</file>
+        <file>_____/新增資料夾/green_horizontal_bomb.png</file>
+        <file>_____/新增資料夾/green_horizontal_bomb_clicked.png</file>
+        <file>_____/新增資料夾/green_vertical_bomb.png</file>
+        <file>_____/新增資料夾/green_vertical_bomb_clicked.png</file>
+        <file>_____/新增資料夾/power_bomb.png</file>
+        <file>_____/新增資料夾/power_bomb_clicked.png</file>
+        <file>_____/新增資料夾/red.png</file>
+        <file>_____/新增資料夾/red_bomb.png</file>
+        <file>_____/新增資料夾/red_bomb_clicked.png</file>
+        <file>_____/新增資料夾/red_clicked.png</file>
+        <file>_____/新增資料夾/red_horizontal_bomb.png</file>
+        <file>_____/新增資料夾/red_horizontal_bomb_clicked.png</file>
+        <file>_____/新增資料夾/red_vertical_bomb.png</file>
+        <file>_____/新增資料夾/red_vertical_bomb_clicked.png</file>
+        <file>_____/新增資料夾/yellow.png</file>
+        <file>_____/新增資料夾/yellow_bomb.png</file>
+        <file>_____/新增資料夾/yellow_bomb_clicked.png</file>
+        <file>_____/新增資料夾/yellow_clicked.png</file>
+        <file>_____/新增資料夾/yellow_horizontal_bomb.png</file>
+        <file>_____/新增資料夾/yellow_horizontal_bomb_clicked.png</file>
+        <file>_____/新增資料夾/yellow_vertical_bomb.png</file>
+        <file>_____/新增資料夾/yellow_vertical_bomb_clicked.png</file>
+    </qresource>
+</RCC>
