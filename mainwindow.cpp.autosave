@@ -107,6 +107,9 @@ void MainWindow::setClickedPicture(Block *a)
 
 bool MainWindow::Judge(int row1, int col1, int row2, int col2)
 {
+    //5 with 5
+    //5 with others num
+    
     JudgeStar(row1,col1);
     JudgeStar(row2,col2);
     Judge9(row1,col1);

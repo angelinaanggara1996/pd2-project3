@@ -4,7 +4,7 @@ Block::Block(QWidget *parent, int R,int C):QObject(parent),row(R),column(C)
 {
     button=new QPushButton(parent);
     button->setGeometry(column *50,row *50,50,50);
-    connect(button,SIGNAL(clicked()),parent,SLOT(click()));
+    connect(button,SIGNAL(clicked()),this,SLOT(click()));
 }
 
 Block::~Block()
@@ -65,8 +65,10 @@ void Block::setButtonPicture()
         button->setIcon(QIcon(QPixmap(":/bg/blue_bomb.png")));
          break;
     case 5:
-        button->setIcon(QIcon(QPixmap(":/bg/.png")));
+        button->setIcon(QIcon(QPixmap(":/bg/power_bomb.png")));
          break;
+    default:
+        button->setIcon(QIcon(QPixmap("No Picture")));
     }
 }
 
@@ -74,6 +76,24 @@ void Block::setRandomNumber()
 {
     number=rand()%4+1;
     return;
+}
+
+void Block::operator-(Block *a)
+{
+    int tmp_num=a->number;
+    a->number=number;
+    number=tmp_num;
+    setButtonPicture();
+    a->setButtonPicture();
+}
+
+void Block::operator|(Block *a)
+{
+    int tmp_num=a->number;
+    a->number=number;
+    number=tmp_num;
+    setButtonPicture();
+    a->setButtonPicture();
 }
 
 void Block::click()

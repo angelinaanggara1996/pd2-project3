@@ -15,6 +15,8 @@ public:
     int number;
     void setButtonPicture();
     void setRandomNumber();
+    void operator-(Block * a);
+    void operator|(Block * a);
 public slots:
     void click();
 signals:

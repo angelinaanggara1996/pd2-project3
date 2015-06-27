@@ -15,11 +15,21 @@ TEMPLATE = app
 SOURCES += main.cpp\
         start.cpp \
     mainwindow.cpp \
-    block.cpp
+    block.cpp \
+    Destroy.cpp \
+    Star.cpp \
+    Horizontal.cpp \
+    Vertical.cpp \
+    NineBlock.cpp
 
 HEADERS  += start.h \
     mainwindow.h \
-    block.h
+    block.h \
+    Destroy.h \
+    Star.h \
+    Horizontal.h \
+    Vertical.h \
+    NineBlock.h
 
 FORMS    += start.ui \
     mainwindow.ui
