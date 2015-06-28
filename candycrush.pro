@@ -20,7 +20,11 @@ SOURCES += main.cpp\
     Star.cpp \
     Horizontal.cpp \
     Vertical.cpp \
-    NineBlock.cpp
+    NineBlock.cpp \
+    horthreecandy.cpp \
+    verthreecandy.cpp \
+    starplusstar.cpp \
+    starwithothers.cpp
 
 HEADERS  += start.h \
     mainwindow.h \
@@ -29,7 +33,11 @@ HEADERS  += start.h \
     Star.h \
     Horizontal.h \
     Vertical.h \
-    NineBlock.h
+    NineBlock.h \
+    horthreecandy.h \
+    verthreecandy.h \
+    starplusstar.h \
+    starwithothers.h
 
 FORMS    += start.ui \
     mainwindow.ui

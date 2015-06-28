@@ -1,5 +1,5 @@
 #include "Star.h"
-
+#include <QDebug>
 Star::Star()
 {
 
@@ -67,13 +67,15 @@ int Star::spam(Block *a[10][10], Block *focus, int mode)
     case 1:
         focus->number=5;
         //left
-        if(C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)&& (num==a[R][C-1]->number|| num==a[R][C-1]->number/10))
+        if(C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)&&
+                (num==a[R][C-1]->number|| num==a[R][C-1]->number/10))
         {
             a[R][C-2]->number=0;
             a[R][C-1]->number=0;
         }
         //right
-        if(C<=7 && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)&& (num==a[R][C+2]->number|| num==a[R][C+2]->number/10))
+        if(C<=7 && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                && (num==a[R][C+2]->number|| num==a[R][C+2]->number/10))
         {
             a[R][C+1]->number=0;
             a[R][C+2]->number=0;
@@ -111,17 +113,19 @@ int Star::spam(Block *a[10][10], Block *focus, int mode)
         break;
     case 2:
         focus->number=5;
-        //down
-        if(R>=2 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)&& (num==a[R-1][C]->number|| num==a[R-1][C]->number/10))
+        //up
+        if(R>=2 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
+                && (num==a[R-1][C]->number|| num==a[R-1][C]->number/10))
         {
             a[R-2][C]->number=0;
             a[R-1][C]->number=0;
         }
-        //up
-        if(R<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)&& (num==a[R+2][C]->number|| num==a[R+2][C]->number/10))
+        //down
+        if(R<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                && (num==a[R+2][C]->number|| num==a[R+2][C]->number/10))
         {
-            a[R+1][C]->number=0;
-            a[R+2][C]->number=0;
+            a[R-2][C]->number=0;
+            a[R-1][C]->number=0;
         }
         if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
         if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
@@ -157,13 +161,15 @@ int Star::spam(Block *a[10][10], Block *focus, int mode)
     case 3:
         num/=10;
         //left
-        if(C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)&& (num==a[R][C-1]->number|| num==a[R][C-1]->number/10))
+        if(C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)
+                && (num==a[R][C-1]->number|| num==a[R][C-1]->number/10))
         {
             a[R][C-2]->number=0;
             a[R][C-1]->number=0;
         }
         //right
-        if(C<=7 && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)&& (num==a[R][C+2]->number|| num==a[R][C+2]->number/10))
+        if(C<=7 && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                && (num==a[R][C+2]->number|| num==a[R][C+2]->number/10))
         {
             a[R][C+1]->number=0;
             a[R][C+2]->number=0;
@@ -201,14 +207,16 @@ int Star::spam(Block *a[10][10], Block *focus, int mode)
         break;
     case 4:
         num/=10;
-        //down
-        if(R>=2 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)&& (num==a[R-1][C]->number|| num==a[R-1][C]->number/10))
+        //up
+        if(R>=2 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
+                && (num==a[R-1][C]->number|| num==a[R-1][C]->number/10))
         {
             a[R-2][C]->number=0;
             a[R-1][C]->number=0;
         }
-        //up
-        if(R<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)&& (num==a[R+2][C]->number|| num==a[R+2][C]->number/10))
+        //down
+        if(R<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                && (num==a[R+2][C]->number|| num==a[R+2][C]->number/10))
         {
             a[R+1][C]->number=0;
             a[R+2][C]->number=0;

@@ -1,15 +1,17 @@
 #include "block.h"
-
-Block::Block(QWidget *parent, int R,int C):QObject(parent),row(R),column(C)
+#include <QDebug>
+#include <QTimer>
+Block::Block(QWidget *parent, int R,int C):QObject(parent),row(R),column(C),shift(1)
 {
     button=new QPushButton(parent);
+    t=new QTimer();
     button->setGeometry(column *50,row *50,50,50);
     connect(button,SIGNAL(clicked()),this,SLOT(click()));
 }
 
 Block::~Block()
 {
-
+    delete button;
 }
 
 void Block::setButtonPicture()
@@ -70,6 +72,7 @@ void Block::setButtonPicture()
     default:
         button->setIcon(QIcon(QPixmap("No Picture")));
     }
+    return;
 }
 
 void Block::setRandomNumber()
@@ -80,24 +83,87 @@ void Block::setRandomNumber()
 
 void Block::operator-(Block *a)
 {
-    int tmp_num=a->number;
+    int tmp=a->number;
     a->number=number;
-    number=tmp_num;
+    number=tmp;
     setButtonPicture();
     a->setButtonPicture();
+    //connect(t,SIGNAL(timeout()),this,SLOT(right()));
+    //connect(a->t,SIGNAL(timeout()),a,SLOT(left()));
+    t->start(100);
+    a->t->start(100);
 }
 
 void Block::operator|(Block *a)
 {
-    int tmp_num=a->number;
+    int tmp=a->number;
     a->number=number;
-    number=tmp_num;
+    number=tmp;
     setButtonPicture();
     a->setButtonPicture();
+    connect(t,SIGNAL(timeout()),this,SLOT(down()));
+    connect(a->t,SIGNAL(timeout()),a,SLOT(up()));
+    t->start(100);
+    a->t->start(100);
 }
 
 void Block::click()
 {
     emit Click(row,column);
+}
+
+void Block::right()
+{
+    button->setGeometry(column*50+shift*10,row*50,50,50);
+        shift++;
+        if(shift>5){
+            shift=1;
+            disconnect(t,SIGNAL(timeout()),this,SLOT(moveright()));
+            button->setGeometry(column*50,row*50,50,50);
+            setButtonPicture();
+            emit Alter();
+        }
+        return;
+}
+
+void Block::left()
+{
+    button->setGeometry(column*50-shift*10,row*50,50,50);
+        shift++;
+        if(shift>5){
+            shift=1;
+            disconnect(t,SIGNAL(timeout()),this,SLOT(left()));
+            button->setGeometry(column*50,row*50,50,50);
+            setButtonPicture();
+            emit Alter();
+        }
+        return;
+}
+
+void Block::down()
+{
+    button->setGeometry(column*50,row*50+shift*10,50,50);
+        shift++;
+        if(shift>5){
+            shift=1;
+            disconnect(t,SIGNAL(timeout()),this,SLOT(down()));
+            button->setGeometry(column*50,row*50,50,50);
+            setButtonPicture();
+            emit Alter();
+        }
+        return;
+}
+
+void Block::up()
+{
+    button->setGeometry(column*50,row*50-shift*10,50,50);
+        shift++;
+        if(shift>5){
+            shift=1;
+            disconnect(t,SIGNAL(timeout()),this,SLOT(up()));
+            button->setGeometry(column*50,row*50,50,50);
+            setButtonPicture();
+        }
+        return;
 }
 

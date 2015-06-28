@@ -32,8 +32,8 @@
         <file>yellow_clicked.png</file>
         <file>yellow_horizontal_bomb_clicked.png</file>
         <file>yellow_vertical_bomb_clicked.png</file>
-        <file>blue_boom_clicked.png</file>
-        <file>yellow_horizontal_boom.png</file>
-        <file>yellow_vertical_boom.png</file>
+        <file>blue_bomb_clicked.png</file>
+        <file>yellow_horizontal_bomb.png</file>
+        <file>yellow_vertical_bomb.png</file>
     </qresource>
 </RCC>

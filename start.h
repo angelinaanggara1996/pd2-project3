@@ -19,7 +19,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    MainWindow *m;
+    MainWindow *mw;
     Ui::start *ui;
 };
 

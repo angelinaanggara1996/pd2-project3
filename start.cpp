@@ -15,7 +15,7 @@ start::~start()
 
 void start::on_pushButton_clicked()
 {
-    m=new MainWindow(this);
-    m->show();
+    mw=new MainWindow(this);
+    mw->show();
     this->hide();
 }

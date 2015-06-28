@@ -1,11 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QLCDNumber>
+#include <QObject>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    score=0;
+    L[0]=ui->label_2;
+    //0]=ui->lcdNumber;
+    time->start(100);
+   //s[0]=ui->lcdNumber_2;
     //srand(time(null));
     for(int i=0; i<10;i++)
     {
@@ -15,6 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
             connect(b[i][j],SIGNAL(Click(int,int)),this,SLOT(button_clicked(int,int)));
         }
     }
+    isClicked=false;
+    GameStart();
+    //L[0]->setText(score);
 }
 
 MainWindow::~MainWindow()
@@ -107,15 +117,52 @@ void MainWindow::setClickedPicture(Block *a)
 
 bool MainWindow::Judge(int row1, int col1, int row2, int col2)
 {
-    JudgeStar(row1,col1);
-    JudgeStar(row2,col2);
-    Judge9(row1,col1);
-    Judge9(row2,col2);
-    JudgeHor(row1,col1);
-    JudgeHor(row2,col2);
-    JudgeVer(row1,col1);
-    JudgeVer(row2,col2);
+    bool Done[12]={0};
+
+    // check destroy 55
+    if((b[row1][col1]->number==5)&&(b[row2][col2]->number==5)){
+        destroy=new StarPlusStar;
+        destroy->eliminate(b,b[row1][col1]);
+        delete destroy;
+        return true;
+    }
+    // end check destroy 55
+
+    // check destroy star with candy
+    if((b[row1][col1]->number==5)||(b[row2][col2]->number==5)){
+        if(b[row1][col1]->number==5){
+            destroy=new StarWithOthers;
+            destroy->eliminate(b,b[row2][col2]);
+            delete destroy;
+            return true;
+        }
+        if(b[row2][col2]->number==5){
+            destroy=new StarWithOthers;
+            destroy->eliminate(b,b[row1][col1]);
+            delete destroy;
+            return true;
+        }
+    }// end check
+
+    Done[0]=JudgeStar(row1,col1);
+    Done[1]=JudgeStar(row2,col2);
+    Done[2]=Judge9(row1,col1);
+    Done[3]=Judge9(row2,col2);
+    Done[4]=JudgeHor(row1,col1);
+    Done[5]=JudgeHor(row2,col2);
+    Done[6]=JudgeVer(row1,col1);
+    Done[7]=JudgeVer(row2,col2);
+    Done[8]=Judge3H(row1,col1);
+    Done[9]=Judge3H(row2,col2);
+    Done[10]=Judge3V(row1,col1);
+    Done[11]=Judge3V(row2,col2);
+    Check();
     RenewPicture();
+    for(int i=0;i<12;i++){
+        if(Done[i]==true)
+            return true;
+    }
+    return false;
 }
 
 bool MainWindow::JudgeStar(int R, int C)
@@ -146,6 +193,10 @@ bool MainWindow::JudgeStar(int R, int C)
             break;
         }
         delete destroy;
+        if(anySpam==true)
+        {
+            score+=40000;
+        }
         return anySpam;
     }
 }
@@ -176,8 +227,60 @@ bool MainWindow::Judge9(int R, int C)
             destroy->spam(b,b[R][C],4);
             anySpam=true;
             break;
+        case 5:
+            destroy->spam(b,b[R][C],5);
+            anySpam=true;
+            break;
+        case 6:
+            destroy->spam(b,b[R][C],6);
+            anySpam=true;
+            break;
+        case 7:
+            destroy->spam(b,b[R][C],7);
+            anySpam=true;
+            break;
+        case 8:
+            destroy->spam(b,b[R][C],8);
+            anySpam=true;
+            break;
+        case 9:
+            destroy->spam(b,b[R][C],9);
+            anySpam=true;
+            break;
+        case 10:
+            destroy->spam(b,b[R][C],10);
+            anySpam=true;
+            break;
+        case 11:
+            destroy->spam(b,b[R][C],11);
+            anySpam=true;
+            break;
+        case 12:
+            destroy->spam(b,b[R][C],12);
+            anySpam=true;
+            break;
+        case 13:
+            destroy->spam(b,b[R][C],13);
+            anySpam=true;
+            break;
+        case 14:
+            destroy->spam(b,b[R][C],14);
+            anySpam=true;
+            break;
+        case 15:
+            destroy->spam(b,b[R][C],15);
+            anySpam=true;
+            break;
+        case 16:
+            destroy->spam(b,b[R][C],16);
+            anySpam=true;
+            break;
         }
         delete destroy;
+        if(anySpam==true)
+        {
+            score+=30000;
+        }
         return anySpam;
     }
 }
@@ -210,6 +313,10 @@ bool MainWindow::JudgeHor(int R, int C)
             break;
         }
         delete destroy;
+        if(anySpam==true)
+        {
+            score+=20000;
+        }
         return anySpam;
     }
 }
@@ -242,7 +349,121 @@ bool MainWindow::JudgeVer(int R, int C)
             break;
         }
         delete destroy;
+        if(anySpam==true)
+        {
+            score+=20000;
+        }
         return anySpam;
+    }
+}
+
+bool MainWindow::Judge3H(int R, int C)
+{
+    int return_value;
+    bool anySpam= false;
+    destroy=new HorThreecandy;
+    return_value=destroy->condition(b,b[R][C]);
+    if(return_value)
+    {
+        switch(return_value)
+        {
+        case 1:
+            destroy->spam(b,b[R][C],1);
+            anySpam=true;
+            break;
+        case 2:
+            destroy->spam(b,b[R][C],2);
+            anySpam=true;
+            break;
+        case 3:
+            destroy->spam(b,b[R][C],3);
+            anySpam=true;
+            break;
+        case 4:
+            destroy->spam(b,b[R][C],4);
+            anySpam=true;
+            break;
+        case 5:
+            destroy->spam(b,b[R][C],5);
+            anySpam=true;
+            break;
+        case 6:
+            destroy->spam(b,b[R][C],6);
+            anySpam=true;
+            break;
+        }
+        delete destroy;
+        if(anySpam==true)
+        {
+            score+=10000;
+        }
+        return anySpam;
+    }
+}
+
+bool MainWindow::Judge3V(int R, int C)
+{
+    int return_value;
+    bool anySpam= false;
+    destroy=new VerThreecandy;
+    return_value=destroy->condition(b,b[R][C]);
+    if(return_value)
+    {
+        switch(return_value)
+        {
+        case 1:
+            destroy->spam(b,b[R][C],1);
+            anySpam=true;
+            break;
+        case 2:
+            destroy->spam(b,b[R][C],2);
+            anySpam=true;
+            break;
+        case 3:
+            destroy->spam(b,b[R][C],3);
+            anySpam=true;
+            break;
+        case 4:
+            destroy->spam(b,b[R][C],4);
+            anySpam=true;
+            break;
+        case 5:
+            destroy->spam(b,b[R][C],5);
+            anySpam=true;
+            break;
+        case 6:
+            destroy->spam(b,b[R][C],6);
+            anySpam=true;
+            break;
+        }
+        delete destroy;
+        if(anySpam==true)
+        {
+            score+=10000;
+        }
+        return anySpam;
+    }
+}
+
+void MainWindow::Check()
+{
+    for(int k=0;k<10;k++)
+    {
+        for(int i=0;i<10;i++)
+        {
+            if(b[k][i]->number==0)
+            {
+                for(int j=0;j<=k;j++)
+                {
+                    if((k-j-1)!=-1)
+                        b[k-j][i]->number=b[k-j-1][i]->number;
+                    else
+                    {
+                        b[k-j][i]->setRandomNumber();
+                    }
+                 }
+            }
+        }
     }
 }
 
@@ -251,6 +472,49 @@ void MainWindow::RenewPicture()
     for(int i=0;i<10;i++)
         for(int j=0;j<10;j++)
             b[i][j]->setButtonPicture();
+}
+
+bool MainWindow::ClearPoss()
+{
+    bool HaveToClear=false;
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=JudgeStar(i,j))return true;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=Judge9(i,j))return true;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=JudgeVer(i,j))return true;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=JudgeHor(i,j))return true;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=Judge3V(i,j))return true;
+        }
+    }
+
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(HaveToClear=Judge3H(i,j))return true;
+        }
+    }
+
+    return HaveToClear;
 }
 
 void MainWindow::button_clicked(int R, int C)

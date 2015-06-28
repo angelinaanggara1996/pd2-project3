@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include<QPushButton>
+#include <QTimer>
+#include <QLCDNumber>
 class Block : public QObject
 {
         Q_OBJECT
@@ -17,10 +19,18 @@ public:
     void setRandomNumber();
     void operator-(Block * a);
     void operator|(Block * a);
+    QTimer *t;
 public slots:
     void click();
+    void right();
+    void left();
+    void down();
+    void up();
 signals:
         void Click(int R,int C);
+        void Alter();
+private:
+        int shift;
 };
 
 #endif // BLOCK_H

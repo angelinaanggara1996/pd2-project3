@@ -26,26 +26,26 @@ int NineBlock::condition(Block *a[10][10], Block *focus)
                 return 1;
             }
             //left down
-            if(R>=2 && C<=7 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
-                            && (num==a[R-1][C]->number||num==a[R-1][C]->number/10)
-                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10)
-                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10))
+            if(R<=7 && C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)
+                            && (num==a[R][C-1]->number||num==a[R][C-1]->number/10)
+                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                            && (num==a[R+2][C]->number||num==a[R+2][C]->number/10))
             {
                 return 2;
             }
             //right up
-            if(R<=7 && C>=2 && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
-                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
-                            && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)
-                            && (num==a[R][C-1]->number||num==a[R][C-1]->number/10))
+            if(R>=2 && C<=7 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
+                            && (num==a[R-1][C]->number||num==a[R-1][C]->number/10)
+                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10))
             {
                 return 3;
             }
             //right down
-            if(R<=7 && C<=7 && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
-                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
-                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10)
-                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10))
+            if(R<=7 && C<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                            && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
+                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10))
             {
                 return 4;
             }
@@ -65,15 +65,15 @@ int NineBlock::condition(Block *a[10][10], Block *focus)
                 return 6;
             //up T
             if(R>=2 && C<=8 && C>=1
-                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R][C-1]->number||a[R][C-1]->number/10)
+                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R-1][C]->number||a[R-1][C]->number/10)
                     &&(num==a[R-2][C]->number||a[R-2][C]->number/10))
                 return 7;
             //down T
             if(R<=7 && C<=8 && C>=1
-                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R][C-1]->number||a[R][C-1]->number/10)
+                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R+1][C]->number||a[R+1][C]->number/10)
                     &&(num==a[R+2][C]->number||a[R+2][C]->number/10))
                 return 8;
@@ -90,26 +90,26 @@ int NineBlock::condition(Block *a[10][10], Block *focus)
                 return 9;
             }
             //left down
-            if(R>=2 && C<=7 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
-                            && (num==a[R-1][C]->number||num==a[R-1][C]->number/10)
-                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10)
-                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10))
+            if(R<=7 && C>=2 && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)
+                            && (num==a[R][C-1]->number||num==a[R][C-1]->number/10)
+                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                            && (num==a[R+2][C]->number||num==a[R+2][C]->number/10))
             {
                 return 10;
             }
             //right up
-            if(R<=7 && C>=2 && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
-                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
-                            && (num==a[R][C-2]->number||num==a[R][C-2]->number/10)
-                            && (num==a[R][C-1]->number||num==a[R][C-1]->number/10))
+            if(R>=2 && C<=7 && (num==a[R-2][C]->number||num==a[R-2][C]->number/10)
+                            && (num==a[R-1][C]->number||num==a[R-1][C]->number/10)
+                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10))
             {
                 return 11;
             }
             //right down
-            if(R<=7 && C<=7 && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
-                            && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
-                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10)
-                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10))
+            if(R<=7 && C<=7 && (num==a[R+1][C]->number||num==a[R+1][C]->number/10)
+                            && (num==a[R+2][C]->number||num==a[R+2][C]->number/10)
+                            && (num==a[R][C+1]->number||num==a[R][C+1]->number/10)
+                            && (num==a[R][C+2]->number||num==a[R][C+2]->number/10))
             {
                 return 12;
             }
@@ -129,15 +129,15 @@ int NineBlock::condition(Block *a[10][10], Block *focus)
                 return 14;
             //up T
             if(R>=2 && C<=8 && C>=1
-                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R][C-1]->number||a[R][C-1]->number/10)
+                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R-1][C]->number||a[R-1][C]->number/10)
                     &&(num==a[R-2][C]->number||a[R-2][C]->number/10))
                 return 15;
             //down T
             if(R<=7 && C<=8 && C>=1
-                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R][C-1]->number||a[R][C-1]->number/10)
+                    &&(num==a[R][C+1]->number||a[R][C+1]->number/10)
                     &&(num==a[R+1][C]->number||a[R+1][C]->number/10)
                     &&(num==a[R+2][C]->number||a[R+2][C]->number/10))
                 return 16;
@@ -158,10 +158,8 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
     case 1:
         //left up
         focus->number=focus->number*10+3;
-        //if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
-        //if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
-        if(C>=2 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
-        if(R>=2 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
+        if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
+        if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
         if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
         if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
         FiveNum[2]=a[R][C]->number;
@@ -222,13 +220,13 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
     case 2://??
         //left down
         focus->number=focus->number*10+3;
-        if(C>=2 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
-        if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
+        if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
+        if(R>=1 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
         if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
         if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
         FiveNum[2]=a[R][C]->number;
-        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
-        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
         for(int i=0;i<2;i++)
         {
             Destroy *d;
@@ -261,21 +259,21 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
             switch(FiveNum[i+3])
             {
             case 0:
-                a[R-2+i][C]->number=0;
+                a[R+1+i][C]->number=0;
                 break;
             case 1:
                  d = new Vertical;
-                 d->eliminate(a,a[R-2+i][C]);
+                 d->eliminate(a,a[R+1+i][C]);
                  delete d;
                  break;
             case 2:
                 d = new Horizontal;
-                d->eliminate(a,a[R-2+i][C]);
+                d->eliminate(a,a[R+1+i][C]);
                 delete d;
                 break;
             case 3:
                 d = new NineBlock;
-                d->eliminate(a,a[R-2+i][C]);
+                d->eliminate(a,a[R+1+i][C]);
                 delete d;
                 break;
             }
@@ -284,10 +282,10 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
     case 3://??
         //right up
         focus->number=focus->number*10+3;
-        if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
-        if(R>=2 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
-        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
-        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
+        if(C>=1 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
+        if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
         FiveNum[2]=a[R][C]->number;
         if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
         if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
@@ -297,21 +295,21 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
             switch(FiveNum[i])
             {
             case 0:
-                a[R][C-2+i]->number=0;
+                a[R][C+1+i]->number=0;
                 break;
             case 1:
                  d = new Vertical;
-                 d->eliminate(a,a[R][C-2+i]);
+                 d->eliminate(a,a[R][C+1+i]);
                  delete d;
                  break;
             case 2:
                 d = new Horizontal;
-                d->eliminate(a,a[R][C-2+i]);
+                d->eliminate(a,a[R][C+1+i]);
                 delete d;
                 break;
             case 3:
                 d = new NineBlock;
-                d->eliminate(a,a[R][C-2+i]);
+                d->eliminate(a,a[R][C+1+i]);
                 delete d;
                 break;
             }
@@ -346,6 +344,306 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
     case 4://??
         //right down
         focus->number=focus->number*10+3;
+        if(C>=1 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
+        if(R>=1 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
+        FiveNum[2]=a[R][C]->number;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C+1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C+1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R+1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R+1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        //case5to8 for Tstyle
+    case 5:
+        //left T
+        focus->number=focus->number*10+3;
+        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
+        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
+        FiveNum[3]=a[R][C]->number;
+        if(a[R-1][C]->number/10!=0) FiveNum[2]=a[R-1][C]->number%10;
+        if(a[R+1][C]->number/10!=0) FiveNum[4]=a[R+1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-2+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-2+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R-1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 6:
+        //right T
+        focus->number=focus->number*10+3;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
+        FiveNum[3]=a[R][C]->number;
+        if(a[R-1][C]->number/10!=0) FiveNum[2]=a[R-1][C]->number%10;
+        if(a[R+1][C]->number/10!=0) FiveNum[4]=a[R+1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C+1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C+1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R-1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 7:
+        //up T
+        focus->number=focus->number*10+3;
+        if(a[R][C-1]->number/10!=0) FiveNum[0]=a[R][C-1]->number%10;
+        if(a[R][C+1]->number/10!=0) FiveNum[2]=a[R][C+1]->number%10;
+        FiveNum[1]=a[R][C]->number;
+        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
+        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R-2+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-2+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-2+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-2+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 8:
+        //down T
+        focus->number=focus->number*10+3;
+        if(a[R][C-1]->number/10!=0) FiveNum[0]=a[R][C-1]->number%10;
+        if(a[R][C+1]->number/10!=0) FiveNum[2]=a[R][C+1]->number%10;
+        FiveNum[1]=a[R][C]->number;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R+1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R+1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            }
+        }
+    case 9:
+        num/=10;
         if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
         if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
         if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
@@ -404,253 +702,432 @@ int NineBlock::spam(Block *a[10][10], Block *focus, int mode)
                 break;
             }
         }
-        //case5to8 for Tstyle
-    case 5:
+        break;
+    case 10:
+        //left down
+        num/=10;
+        if(C<=8 && num==a[R][C+1]->number||num==a[R][C+1]->number/10) a[R][C+1]->number=0;
+        if(R>=1 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
+        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
+        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
+        FiveNum[2]=a[R][C]->number;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-2+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-2+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R+1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R+1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 11:
+        //right up
+        num/=10;
+        if(C>=1 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
+        if(R<=8 && num==a[R+1][C]->number||num==a[R+1][C]->number/10) a[R+1][C]->number=0;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
+        FiveNum[2]=a[R][C]->number;
+        if(a[R-1][C]->number/10!=0) FiveNum[3]=a[R-1][C]->number%10;
+        if(a[R-2][C]->number/10!=0) FiveNum[4]=a[R-2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C+1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C+1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<=2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+2])
+            {
+            case 0:
+                a[R-i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 12:
+        //right down
+        num/=10;
+        if(C>=1 && num==a[R][C-1]->number||num==a[R][C-1]->number/10) a[R][C-1]->number=0;
+        if(R>=1 && num==a[R-1][C]->number||num==a[R-1][C]->number/10) a[R-1][C]->number=0;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
+        FiveNum[2]=a[R][C]->number;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C+1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C+1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<=2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+2])
+            {
+            case 0:
+                a[R+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R+i][C]);
+                delete d;
+                break;
+            }
+        }
+        //case13to16 for Tstyle
+    case 13:
         //left T
-        focus->number=focus->number*10+3;
-        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
-        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
-        FiveNum[2]=a[R][C]->number;
-        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
-        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i])
-            {
-            case 0:
-                a[R][C-2+i]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R][C-2+i]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            }
-        }
-        //3&4 set the row
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i+3])
-            {
-            case 0:
-                a[R-2+i][C]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R-2+i][C]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            }
-        }
-        break;
-    case 6:
-        //right T
-        focus->number=focus->number*10+3;
-        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
-        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
-        FiveNum[2]=a[R][C]->number;
-        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
-        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i])
-            {
-            case 0:
-                a[R][C-2+i]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R][C-2+i]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            }
-        }
-        //3&4 set the row
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i+3])
-            {
-            case 0:
-                a[R-2+i][C]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R-2+i][C]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            }
-        }
-        break;
-    case 7:
-        //up T
-        focus->number=focus->number*10+3;
-        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
-        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
-        FiveNum[2]=a[R][C]->number;
-        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
-        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i])
-            {
-            case 0:
-                a[R][C-2+i]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R][C-2+i]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            }
-        }
-        //3&4 set the row
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i+3])
-            {
-            case 0:
-                a[R-2+i][C]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R-2+i][C]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            }
-        }
-        break;
-    case 8:
-        //down T
-        focus->number=focus->number*10+3;
-        if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
-        if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
-        FiveNum[2]=a[R][C]->number;
-        if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
-        if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i])
-            {
-            case 0:
-                a[R][C-2+i]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R][C-2+i]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R][C-2+i]);
-                delete d;
-                break;
-            }
-        }
-        //3&4 set the row
-        for(int i=0;i<2;i++)
-        {
-            Destroy *d;
-            switch(FiveNum[i+3])
-            {
-            case 0:
-                a[R-2+i][C]->number=0;
-                break;
-            case 1:
-                 d = new Vertical;
-                 d->eliminate(a,a[R-2+i][C]);
-                 delete d;
-                 break;
-            case 2:
-                d = new Horizontal;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            case 3:
-                d = new NineBlock;
-                d->eliminate(a,a[R-2+i][C]);
-                delete d;
-                break;
-            }
-        }
-    case 9:
         num/=10;
         if(a[R][C-2]->number/10!=0) FiveNum[0]=a[R][C-2]->number%10;
         if(a[R][C-1]->number/10!=0) FiveNum[1]=a[R][C-1]->number%10;
-        FiveNum[2]=a[R][C]->number%10;
+        FiveNum[3]=a[R][C]->number;
+        if(a[R-1][C]->number/10!=0) FiveNum[2]=a[R-1][C]->number%10;
+        if(a[R+1][C]->number/10!=0) FiveNum[4]=a[R+1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-2+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-2+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-2+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R-1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 14:
+        //right T
+        num/=10;
+        if(a[R][C+1]->number/10!=0) FiveNum[0]=a[R][C+1]->number%10;
+        if(a[R][C+2]->number/10!=0) FiveNum[1]=a[R][C+2]->number%10;
+        FiveNum[3]=a[R][C]->number;
+        if(a[R-1][C]->number/10!=0) FiveNum[2]=a[R-1][C]->number%10;
+        if(a[R+1][C]->number/10!=0) FiveNum[4]=a[R+1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C+1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C+1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C+1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<=2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+2])
+            {
+            case 0:
+                a[R-1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-1+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 15:
+        //up T
+        num/=10;
+        if(a[R][C-1]->number/10!=0) FiveNum[0]=a[R][C-1]->number%10;
+        if(a[R][C+1]->number/10!=0) FiveNum[2]=a[R][C+1]->number%10;
+        FiveNum[1]=a[R][C]->number;
         if(a[R-2][C]->number/10!=0) FiveNum[3]=a[R-2][C]->number%10;
         if(a[R-1][C]->number/10!=0) FiveNum[4]=a[R-1][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R-2+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R-2+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R-2+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R-2+i][C]);
+                delete d;
+                break;
+            }
+        }
+        break;
+    case 16:
+        //down T
+        num/=10;
+        if(a[R][C-1]->number/10!=0) FiveNum[0]=a[R][C-1]->number%10;
+        if(a[R][C+1]->number/10!=0) FiveNum[2]=a[R][C+1]->number%10;
+        FiveNum[1]=a[R][C]->number;
+        if(a[R+1][C]->number/10!=0) FiveNum[3]=a[R+1][C]->number%10;
+        if(a[R+2][C]->number/10!=0) FiveNum[4]=a[R+2][C]->number%10;
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i])
+            {
+            case 0:
+                a[R][C-1+i]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R][C-1+i]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R][C-1+i]);
+                delete d;
+                break;
+            }
+        }
+        //3&4 set the row
+        for(int i=0;i<2;i++)
+        {
+            Destroy *d;
+            switch(FiveNum[i+3])
+            {
+            case 0:
+                a[R+1+i][C]->number=0;
+                break;
+            case 1:
+                 d = new Vertical;
+                 d->eliminate(a,a[R+1+i][C]);
+                 delete d;
+                 break;
+            case 2:
+                d = new Horizontal;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            case 3:
+                d = new NineBlock;
+                d->eliminate(a,a[R+1+i][C]);
+                delete d;
+                break;
+            }
+        }
         break;
     }
 }
@@ -671,7 +1148,7 @@ void NineBlock::eliminate(Block *a[10][10], Block *focus)
         EightNum[3]=a[R][C-1]->number%10;
     if(C<=8 && a[R][C+1]->number/10!=0)
         EightNum[4]=a[R][C+1]->number%10;
-    if(R>=1 && C<=8 && a[R-1][C+1]->number/10!=0)
+    if(R<=8 && C>=1 && a[R+1][C-1]->number/10!=0)
         EightNum[5]=a[R-1][C+1]->number%10;
     if(R<=8&&a[R+1][C]->number/10!=0)
         EightNum[6]=a[R+1][C]->number%10;
@@ -797,7 +1274,7 @@ void NineBlock::eliminate(Block *a[10][10], Block *focus)
         break;
     }
     }
-    if(R>=1 && C<=8)
+    if(R<=8 && C>=1)
     {
          Destroy *d;
     switch(EightNum[5]){
@@ -806,17 +1283,17 @@ void NineBlock::eliminate(Block *a[10][10], Block *focus)
         break;
     case 1:
         d=new Vertical;
-        d->eliminate(a,a[R-1][C+1]);
+        d->eliminate(a,a[R+1][C-1]);
         delete d;
         break;
     case 2:
         d = new Horizontal;
-        d->eliminate(a,a[R-1][C+1]);
+        d->eliminate(a,a[R+1][C-1]);
         delete d;
         break;
     case 3:
         d = new NineBlock;
-        d->eliminate(a,a[R-1][C+1]);
+        d->eliminate(a,a[R+1][C-1]);
         delete d;
         break;
     }
