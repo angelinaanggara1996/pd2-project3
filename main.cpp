@@ -1,13 +1,13 @@
 #include "start.h"
+#include "mainwindow.h"
 #include <QApplication>
-#include <stdlib.h>
-#include <time.h>
+#include "time.h"
 int main(int argc, char *argv[])
 {
     srand(time(NULL));
     QApplication a(argc, argv);
-    start w;
+    MainWindow w;
     w.show();
-
+    w.GameStart();
     return a.exec();
 }

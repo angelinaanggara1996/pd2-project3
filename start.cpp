@@ -15,7 +15,8 @@ start::~start()
 
 void start::on_pushButton_clicked()
 {
-    mw=new MainWindow(this);
+    mw=new MainWindow();
     mw->show();
+    mw->GameStart();
     this->hide();
 }

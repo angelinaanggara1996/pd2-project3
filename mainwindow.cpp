@@ -9,9 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     score=0;
-    L[0]=ui->label_2;
+    //L[0]=ui->label_2;
     //0]=ui->lcdNumber;
-    time->start(100);
+    //time->start(100);
    //s[0]=ui->lcdNumber_2;
     //srand(time(null));
     for(int i=0; i<10;i++)
@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
             connect(b[i][j],SIGNAL(Click(int,int)),this,SLOT(button_clicked(int,int)));
         }
     }
-    isClicked=false;
-    GameStart();
+    //isClicked=false;
+    //GameStart();
     //L[0]->setText(score);
 }
 
